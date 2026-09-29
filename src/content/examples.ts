@@ -77,6 +77,18 @@ export const examplesPage: {
           notice:
             "Named projects sit in the menu, and a project page says how the work was made: Serveau includes the motors, the drawing, and an augmented layer. The sound and video page gives the year and says who programmed and performed.",
         },
+        {
+          name: "Mollye Bendell",
+          url: "https://mollyebendell.com",
+          notice:
+            "Each project is named, and the page says what a person can do with it: Whethervanes asks a listener to handle the radio to change the sound. Recorder explains the machine that draws a voice into sand, and it credits the documentation.",
+        },
+        {
+          name: "Jonathan David Martin",
+          url: "https://www.jonathan-david-martin.com/",
+          notice:
+            "The project list puts a role on the same line as the title: director, producer, performer, or narrative designer. The title says the kind of work, and the longer page or video is a link out.",
+        },
       ],
     },
     {
