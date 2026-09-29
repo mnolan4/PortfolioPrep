@@ -35,6 +35,12 @@ export const examplesPage: {
           notice:
             "The work is filed as traditional, digital, or computational, and the pieces are named. The computational page says those works were scripted, and it separates them from generated images.",
         },
+        {
+          name: "Leyla Park",
+          url: "https://leylapark.framer.website",
+          notice:
+            "Selected work names the piece and what kind of project it is: re/flection is an interactive installation, ARise is an AR experience. Tools and years sit beside the title, and a case study or project link opens the longer explanation.",
+        },
       ],
     },
     {
