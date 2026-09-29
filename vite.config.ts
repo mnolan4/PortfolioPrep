@@ -1,16 +1,28 @@
-import { copyFileSync } from "node:fs";
+import { copyFileSync, mkdirSync } from "node:fs";
 import { resolve } from "node:path";
 import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
+import { guidePages } from "./src/content/nav.ts";
 
-/** GitHub Pages keeps the requested URL and serves 404.html. A copy of index.html lets the SPA read the real path. */
+/**
+ * GitHub Pages has no SPA rewrite. 404.html keeps unknown paths on the app.
+ * A directory index for each guide route lets that URL return 200.
+ */
 function spaFallback(): Plugin {
   return {
     name: "github-pages-spa-fallback",
     apply: "build",
     closeBundle() {
       const outDir = resolve("dist");
-      copyFileSync(resolve(outDir, "index.html"), resolve(outDir, "404.html"));
+      const indexPath = resolve(outDir, "index.html");
+      copyFileSync(indexPath, resolve(outDir, "404.html"));
+      const routes = [...guidePages.map((page) => page.path), "/audit"];
+      for (const routePath of routes) {
+        if (routePath === "/") continue;
+        const dir = resolve(outDir, routePath.replace(/^\//, ""));
+        mkdirSync(dir, { recursive: true });
+        copyFileSync(indexPath, resolve(dir, "index.html"));
+      }
     },
   };
 }
