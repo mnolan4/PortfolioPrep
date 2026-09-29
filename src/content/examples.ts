@@ -11,15 +11,31 @@ export interface ExampleGroup {
   people: ExamplePerson[];
 }
 
-export const examplesPage = {
+export const examplesPage: {
+  lede: string;
+  note: string;
+  groups: ExampleGroup[];
+} = {
   lede: "Look at these for evidence, for role, and for whether you can tell what the person makes quickly. Do not copy their visual style.",
   note: "Nothing from these sites is embedded here. Open the page. Read how the work is explained.",
   groups: [
     {
       id: "alumni",
       title: "Alumni",
-      empty: "This group is open for alumni you can name and stand behind.",
-      people: [],
+      people: [
+        {
+          name: "Andrei Davydov",
+          url: "https://andreid2.wordpress.com",
+          notice:
+            "Selected projects are named, and a line under each title says what the piece is: a co-op ice dance game, an AR app, a VR conversation, a motion-capture dance game.",
+        },
+        {
+          name: "Caroline Dinh",
+          url: "https://urlocalcyb.org/",
+          notice:
+            "The work is filed as traditional, digital, or computational, and the pieces are named. The computational page says those works were scripted, and it separates them from generated images.",
+        },
+      ],
     },
     {
       id: "faculty",
@@ -42,6 +58,24 @@ export const examplesPage = {
           url: "https://junis.sakura.ne.jp/wp/",
           notice:
             "Paper titles name the device and the question, and a video link sits beside the citation. The author list shows who made the work, including when it was a collaboration.",
+        },
+        {
+          name: "Ian McDermott",
+          url: "http://www.ian-mcd.com/",
+          notice:
+            "The home page lists named projects, from a motion-capture performance to generative sketches. A project page can give the year, the materials, and a link to the code.",
+        },
+      ],
+    },
+    {
+      id: "mfa",
+      title: "MFA Students",
+      people: [
+        {
+          name: "Wednesday Kim",
+          url: "https://wednesdaykim.xyz/",
+          notice:
+            "The first screen is a desktop of images, with her name in the corner. The About page names the media: 3D animation, video, performance, installation, print, and sculpture.",
         },
       ],
     },
