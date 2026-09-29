@@ -49,9 +49,9 @@ export const foundations = {
       id: "mix",
       title: "Make interdisciplinary work legible",
       paragraphs: [
-        "A project that is a performance, a sensor build, and a composition needs a first sentence that says so. Then say which part you made.",
-        "A reader should not have to infer the discipline from a course number.",
+        "Hybrid work needs a sentence a stranger can repeat, and records that show more than one medium.",
       ],
+      more: { to: "/interdisciplinary", label: "Interdisciplinary work" },
     },
     {
       id: "outside",

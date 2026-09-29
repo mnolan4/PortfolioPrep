@@ -36,6 +36,12 @@ export const guidePages: GuidePage[] = [
     stage: "curate",
   },
   {
+    path: "/examples",
+    label: "Examples",
+    title: "Examples",
+    stage: "curate",
+  },
+  {
     path: "/document",
     label: "Document immersive work",
     title: "Document immersive work",
@@ -63,6 +69,12 @@ export const guidePages: GuidePage[] = [
     path: "/collaboration",
     label: "Collaboration and authorship",
     title: "Collaboration and authorship",
+    stage: "explain",
+  },
+  {
+    path: "/interdisciplinary",
+    label: "Interdisciplinary work",
+    title: "Interdisciplinary work",
     stage: "explain",
   },
   {
@@ -99,6 +111,12 @@ export const guidePages: GuidePage[] = [
     path: "/technical",
     label: "Technical portfolio practices",
     title: "Technical portfolio practices",
+    stage: "revise",
+  },
+  {
+    path: "/tools",
+    label: "Portfolio tools",
+    title: "Portfolio tools",
     stage: "revise",
   },
 ];

@@ -257,6 +257,11 @@ a:hover {
 
 .page {
   width: min(40.5rem, 100%);
+  overflow-wrap: break-word;
+}
+
+.page a {
+  overflow-wrap: anywhere;
 }
 
 .page.wide {
@@ -537,6 +542,8 @@ h2 {
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
   padding: 1rem 1.1rem 1.05rem;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .split-lists,
@@ -556,13 +563,16 @@ h2 {
   margin-top: 1.25rem;
 }
 
-.problem-card h3 {
+.problem-card h3,
+.option-card h3,
+.example-entry h3 {
   font-family: var(--serif);
   font-size: 1.28rem;
   line-height: 1.25;
 }
 
-.problem-card h4 {
+.problem-card h4,
+.option-card h4 {
   margin: 0.85rem 0 0.2rem;
   font-size: 0.8rem;
   letter-spacing: 0.05em;
@@ -572,8 +582,25 @@ h2 {
 }
 
 .problem-card p,
+.option-card p,
 .type-guide p {
   margin: 0;
+}
+
+.compare-col {
+  min-width: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .type-guide h3 {

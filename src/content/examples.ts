@@ -1,0 +1,67 @@
+export interface ExamplePerson {
+  name: string;
+  url: string;
+  notice: string;
+}
+
+export interface ExampleGroup {
+  id: string;
+  title: string;
+  empty?: string;
+  people: ExamplePerson[];
+}
+
+export const examplesPage = {
+  lede: "Look at these for evidence, for role, and for whether you can tell what the person makes quickly. Do not copy their visual style.",
+  note: "Nothing from these sites is embedded here. Open the page. Read how the work is explained.",
+  groups: [
+    {
+      id: "alumni",
+      title: "Alumni",
+      empty: "This group is open for alumni you can name and stand behind.",
+      people: [],
+    },
+    {
+      id: "faculty",
+      title: "Faculty",
+      people: [
+        {
+          name: "Stefano Passeri",
+          url: "https://stefanopasseri.com",
+          notice:
+            "Each project says what the object does. Several pages also show the mechanism, the fabrication, or a collaborator, so a still is not the only evidence.",
+        },
+        {
+          name: "Myungin Lee",
+          url: "https://www.myunginlee.com/projects",
+          notice:
+            "Titles name the system and the setting, so sound, XR, and research are visible without a slash list. Role and the clip live on the project you open.",
+        },
+        {
+          name: "Jun Nishida",
+          url: "https://junis.sakura.ne.jp/wp/",
+          notice:
+            "Paper titles name the device and the question, and a video link sits beside the citation. The author list shows who made the work, including when it was a collaboration.",
+        },
+      ],
+    },
+    {
+      id: "professional",
+      title: "Professional artists",
+      people: [
+        {
+          name: "Char Davies",
+          url: "https://www.immersence.com/osmose",
+          notice:
+            "Osmose is described as an encounter: breath and balance move someone through a virtual forest, and an audience can watch. Credits separate direction from the software, the graphics, and the sound.",
+        },
+        {
+          name: "Stelarc",
+          url: "https://stelarc.org/projects.php",
+          notice:
+            "Projects are named for the action or the apparatus, with a span of years, so you can tell what the body and the machine did. A single still would not carry a suspension, a third hand, or an ear on an arm.",
+        },
+      ],
+    },
+  ] satisfies ExampleGroup[],
+};
