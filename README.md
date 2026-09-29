@@ -8,5 +8,3 @@ The site is a static Vite + React app. Portfolio Audit answers stay in the brows
 ## GitHub Pages
 
 https://mnolan4.github.io/PortfolioPrep/
-
-The workflow in `.github/workflows/pages.yml` builds `dist` and deploys it with GitHub Actions. `base` is `/PortfolioPrep/`.
