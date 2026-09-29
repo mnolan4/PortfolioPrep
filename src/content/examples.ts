@@ -99,7 +99,7 @@ export const examplesPage: {
           name: "Stelarc",
           url: "https://stelarc.org/projects.php",
           notice:
-            "Projects are named for the action or the apparatus, with a span of years, so you can tell what the body and the machine did. A single still would not carry a suspension, a third hand, or an ear on an arm.",
+            "Projects are named for the action or the apparatus, with a span of years, so you can tell what the body and the machine did. A single photograph cannot show a body suspended from hooks, a robotic third hand, or an ear grown on an arm.",
         },
       ],
     },
