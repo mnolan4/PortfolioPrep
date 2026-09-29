@@ -71,6 +71,12 @@ export const examplesPage: {
           notice:
             "The home page lists named projects, from a motion-capture performance to generative sketches. A project page can give the year, the materials, and a link to the code.",
         },
+        {
+          name: "Matt Nolan",
+          url: "https://www.mattnolanart.com",
+          notice:
+            "Named projects sit in the menu, and a project page says how the work was made: Serveau includes the motors, the drawing, and an augmented layer. The sound and video page gives the year and says who programmed and performed.",
+        },
       ],
     },
     {
