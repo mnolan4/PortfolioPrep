@@ -89,6 +89,24 @@ export const examplesPage: {
           notice:
             "The project list puts a role on the same line as the title: director, producer, performer, or narrative designer. The title says the kind of work, and the longer page or video is a link out.",
         },
+        {
+          name: "Cy Keener",
+          url: "https://www.cykeener.com",
+          notice:
+            "Project pages name the collaborators and the materials. The sea-ice work shows the buoy, the sensor string, and a diagram of how the instruments sit in the ice.",
+        },
+        {
+          name: "Shannon Leah Collis",
+          url: "https://www.shannoncollis.ca/conflux",
+          notice:
+            "This page is one installation. It names the collaborator, the sites that were recorded, and the setup: multi-screen video and surround sound, plus where it was shown.",
+        },
+        {
+          name: "Brandon Morse",
+          url: "https://www.coplanar.org",
+          notice:
+            "Works are named with the medium and the year, such as generative video and sound. A commissioned piece is labeled as site-specific, so the room is part of the description.",
+        },
       ],
     },
     {
