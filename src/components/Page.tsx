@@ -33,13 +33,17 @@ export function Page({
       <StageTrail current={current?.stage} />
       <p className="where">
         {current ? (
-          <>
-            {stageLabel(current.stage)}
-            <span aria-hidden="true"> · </span>
-            {current.label}
-          </>
+          current.label === stageLabel(current.stage) ? (
+            stageLabel(current.stage)
+          ) : (
+            <>
+              {stageLabel(current.stage)}
+              <span aria-hidden="true"> · </span>
+              {current.label}
+            </>
+          )
         ) : (
-          "Portfolio Audit · available from any stage"
+          "Self-Audit · prompts for your own notes"
         )}
       </p>
       <header className="page-head">
@@ -60,7 +64,7 @@ export function Page({
               <span />
             )}
             <Link to="/audit" className="page-end-audit">
-              Portfolio Audit
+              Self-Audit
             </Link>
             {next ? (
               <Link to={next.path} className="page-end-next">
@@ -74,7 +78,7 @@ export function Page({
         ) : (
           <Link to="/" className="page-end-next">
             Return
-            <span>Start here</span>
+            <span>Define</span>
           </Link>
         )}
       </nav>

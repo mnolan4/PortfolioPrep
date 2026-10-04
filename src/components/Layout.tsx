@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
-import { useAudit } from "../audit/AuditContext";
-import { completion } from "../audit/storage";
-import { navGroups } from "../content/nav";
+import { guidePages } from "../content/nav";
 
 function useMediaQuery(query: string): boolean {
   const [matches, setMatches] = useState(() => window.matchMedia(query).matches);
@@ -24,9 +22,6 @@ export function Layout() {
   const menuRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const first = useRef(true);
-  const { state, status } = useAudit();
-  const progress = completion(state);
-
   useEffect(() => {
     if (first.current) {
       first.current = false;
@@ -56,9 +51,6 @@ export function Layout() {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
-  const saveText =
-    status === "error" ? "This browser blocked saving." : status === "saved" ? "Saved." : "";
-
   return (
     <div className="app">
       <a className="skip" href="#content">
@@ -70,7 +62,7 @@ export function Layout() {
         </Link>
         <div className="topbar-actions">
           <Link to="/audit" className="topbar-audit">
-            Portfolio Audit
+            Self-Audit
           </Link>
           <button
             ref={menuRef}
@@ -96,39 +88,25 @@ export function Layout() {
           </Link>
           <p className="site-tag">A guide for immersive media portfolios.</p>
           <nav aria-label="Guide">
-            {navGroups().map((group) => (
-              <div key={group.id} className="nav-group">
-                <p className="nav-label" id={`nav-${group.id}`}>
-                  {group.label}
-                </p>
-                <ul aria-labelledby={`nav-${group.id}`}>
-                  {group.items.map((item) => (
-                    <li key={item.path}>
-                      <NavLink to={item.path} end={item.path === "/"}>
-                        {item.label}
-                      </NavLink>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            <ul className="guide-nav">
+              {guidePages.map((item) => (
+                <li key={item.path}>
+                  <NavLink to={item.path} end={item.path === "/"}>
+                    {item.label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
           </nav>
         </div>
         <div className="audit-dock">
           <NavLink to="/audit">
-            Portfolio Audit
-            <span>
-              {progress.filled === 0 ? "Not started" : `${progress.filled} of ${progress.total} started`}
-            </span>
+            Self-Audit
+            <span>Prompts for your own notes</span>
           </NavLink>
-          <p className="save-permanent">Answers are saved in this browser.</p>
+          <p className="save-permanent">This site stores nothing.</p>
         </div>
       </div>
-      {saveText ? (
-        <p className="save-toast" role="status">
-          {saveText}
-        </p>
-      ) : null}
       <main id="content" className="main" ref={mainRef} tabIndex={-1}>
         <Outlet />
       </main>

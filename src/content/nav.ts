@@ -17,108 +17,31 @@ export const stages: { id: StageId; label: string; blurb: string }[] = [
 ];
 
 export const guidePages: GuidePage[] = [
-  {
-    path: "/",
-    label: "Start here",
-    title: "What is your portfolio for?",
-    stage: "define",
-  },
-  {
-    path: "/foundations",
-    label: "Portfolio foundations",
-    title: "Portfolio foundations",
-    stage: "define",
-  },
-  {
-    path: "/problems",
-    label: "Common portfolio problems",
-    title: "Common portfolio problems",
-    stage: "curate",
-  },
-  {
-    path: "/examples",
-    label: "Examples",
-    title: "Examples",
-    stage: "curate",
-  },
-  {
-    path: "/document",
-    label: "Document immersive work",
-    title: "Document immersive work",
-    stage: "document",
-  },
-  {
-    path: "/process",
-    label: "Show your process",
-    title: "Show your process",
-    stage: "document",
-  },
-  {
-    path: "/media",
-    label: "Visual and media documentation",
-    title: "Visual and media documentation",
-    stage: "document",
-  },
-  {
-    path: "/project-pages",
-    label: "Build your project pages",
-    title: "Build your project pages",
-    stage: "explain",
-  },
-  {
-    path: "/collaboration",
-    label: "Collaboration and authorship",
-    title: "Collaboration and authorship",
-    stage: "explain",
-  },
-  {
-    path: "/interdisciplinary",
-    label: "Interdisciplinary work",
-    title: "Interdisciplinary work",
-    stage: "explain",
-  },
-  {
-    path: "/timed-test",
-    label: "The 10-second / 30-second / 3-minute test",
-    title: "The 10-second / 30-second / 3-minute test",
-    stage: "test",
-  },
-  {
-    path: "/evidence",
-    label: "Portfolio evidence audit",
-    title: "Portfolio evidence audit",
-    stage: "test",
-  },
-  {
-    path: "/critique",
-    label: "Portfolio critique toolkit",
-    title: "Portfolio critique toolkit",
-    stage: "test",
-  },
-  {
-    path: "/sprint",
-    label: "Portfolio revision sprint",
-    title: "Portfolio revision sprint",
-    stage: "revise",
-  },
-  {
-    path: "/publish",
-    label: "Before you publish",
-    title: "Before you publish",
-    stage: "revise",
-  },
-  {
-    path: "/technical",
-    label: "Technical portfolio practices",
-    title: "Technical portfolio practices",
-    stage: "revise",
-  },
-  {
-    path: "/tools",
-    label: "Portfolio tools",
-    title: "Portfolio tools",
-    stage: "revise",
-  },
+  { path: "/", label: "Define", title: "Define", stage: "define" },
+  { path: "/curate", label: "Curate", title: "Curate", stage: "curate" },
+  { path: "/examples", label: "Examples", title: "Examples", stage: "curate" },
+  { path: "/document", label: "Document", title: "Document", stage: "document" },
+  { path: "/explain", label: "Explain", title: "Explain", stage: "explain" },
+  { path: "/test", label: "Test", title: "Test", stage: "test" },
+  { path: "/revise", label: "Revise", title: "Revise", stage: "revise" },
+];
+
+/** Old guide URLs. GitHub Pages needs a copy of the app at each path so the redirect can run. */
+export const legacyPaths = [
+  "/foundations",
+  "/problems",
+  "/process",
+  "/media",
+  "/project-pages",
+  "/collaboration",
+  "/interdisciplinary",
+  "/timed-test",
+  "/evidence",
+  "/critique",
+  "/sprint",
+  "/publish",
+  "/technical",
+  "/tools",
 ];
 
 export function stageLabel(id: StageId): string {
@@ -129,9 +52,3 @@ export function firstPath(id: StageId): string {
   return guidePages.find((page) => page.stage === id)?.path ?? "/";
 }
 
-export function navGroups() {
-  return stages.map((stage) => ({
-    ...stage,
-    items: guidePages.filter((page) => page.stage === stage.id),
-  }));
-}

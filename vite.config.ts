@@ -2,7 +2,7 @@ import { copyFileSync, mkdirSync } from "node:fs";
 import { resolve } from "node:path";
 import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
-import { guidePages } from "./src/content/nav.ts";
+import { guidePages, legacyPaths } from "./src/content/nav.ts";
 
 /**
  * GitHub Pages has no SPA rewrite. 404.html keeps unknown paths on the app.
@@ -16,7 +16,7 @@ function spaFallback(): Plugin {
       const outDir = resolve("dist");
       const indexPath = resolve(outDir, "index.html");
       copyFileSync(indexPath, resolve(outDir, "404.html"));
-      const routes = [...guidePages.map((page) => page.path), "/audit"];
+      const routes = [...guidePages.map((page) => page.path), "/audit", ...legacyPaths];
       for (const routePath of routes) {
         if (routePath === "/") continue;
         const dir = resolve(outDir, routePath.replace(/^\//, ""));

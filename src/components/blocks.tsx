@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import type { ReactNode } from "react";
+import { selfAuditStages, type SelfAuditStage } from "../content/self-audit";
 
 export function Outcomes({ items }: { items: string[] }) {
   return (
@@ -146,6 +147,26 @@ export function SectionNav({ items }: { items: { id: string; label: string }[] }
         ))}
       </ol>
     </nav>
+  );
+}
+
+export function ChapterTask({ id }: { id: SelfAuditStage["id"] }) {
+  const stage = selfAuditStages.find((item) => item.id === id);
+  if (!stage) return null;
+  return (
+    <section className="task" id="task">
+      <p className="kicker">{stage.verb}</p>
+      <h2>In your own notes</h2>
+      <p>{stage.task}</p>
+      <ul className="prompt-list">
+        {stage.prompts.map((prompt) => (
+          <li key={prompt}>{prompt}</li>
+        ))}
+      </ul>
+      <p>
+        <Link to={`/audit#${stage.id}`}>All the prompts are on the Self-Audit.</Link>
+      </p>
+    </section>
   );
 }
 

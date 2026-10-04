@@ -5,7 +5,7 @@ export const problems = {
     "Recognize eight common failures and the repair for each.",
   ],
   foreground: [
-    "Projects that match the audience and the kind of work you named on Start here.",
+    "Projects that match the audience and the kind of work you named.",
     "Projects where your role fits in a sentence a stranger can repeat.",
     "Projects with evidence of the experience: play, a room, sound, or a person using the work.",
   ],

@@ -1,23 +1,24 @@
 import { Link } from "react-router-dom";
-import { Outcomes, ProblemCard } from "../components/blocks";
+import { ChapterTask, Outcomes, ProblemCard } from "../components/blocks";
 import { Page } from "../components/Page";
 import { problems } from "../content/problems";
 
-export function ProblemsPage() {
+export function CuratePage() {
   return (
     <Page
-      title="Common portfolio problems"
+      title="Curate"
       lede={problems.lede}
       wide
       sections={[
-        { id: "choosing", label: "Choosing" },
-        { id: "problems", label: "The problems" },
+        { id: "choosing", label: "What stays" },
+        { id: "problems", label: "Common failures" },
+        { id: "task", label: "In your notes" },
       ]}
     >
       <Outcomes items={problems.outcomes} />
       <div className="split-lists" id="choosing">
         <section>
-          <h2>What to foreground</h2>
+          <h2>Foreground</h2>
           <ul>
             {problems.foreground.map((item) => (
               <li key={item}>{item}</li>
@@ -25,7 +26,7 @@ export function ProblemsPage() {
           </ul>
         </section>
         <section>
-          <h2>What to demote</h2>
+          <h2>Demote</h2>
           <ul>
             {problems.demote.map((item) => (
               <li key={item}>{item}</li>
@@ -33,18 +34,18 @@ export function ProblemsPage() {
           </ul>
         </section>
       </div>
-        <p>
-          When you know what to cut, name it in the <Link to="/audit">Portfolio Audit</Link>. The timed test
-          also lives under Test. This page is about selection.
-        </p>
+      <p>
+        Then look at <Link to="/examples">other portfolios</Link> for evidence, role, and whether you can tell what the person makes quickly.
+      </p>
       <section id="problems">
-        <h2>Eight problems</h2>
+        <h2>When the choice did not happen</h2>
         <div className="problem-grid">
           {problems.cards.map((card) => (
             <ProblemCard key={card.title} {...card} />
           ))}
         </div>
       </section>
+      <ChapterTask id="curate" />
     </Page>
   );
 }

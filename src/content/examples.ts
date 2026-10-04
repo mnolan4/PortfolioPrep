@@ -91,17 +91,57 @@ export const examplesPage: {
       ],
     },
     {
-      id: "professional",
-      title: "Professional artists",
+      id: "space",
+      title: "Immersive installation and space",
       people: [
-        {
-          name: "Char Davies",
-          url: "https://www.immersence.com/osmose",
-        },
-        {
-          name: "Stelarc",
-          url: "https://stelarc.org/projects.php",
-        },
+        { name: "Char Davies", url: "https://www.immersence.com/osmose" },
+        { name: "Rafael Lozano-Hemmer", url: "https://www.lozano-hemmer.com/" },
+        { name: "Janet Cardiff & George Bures Miller", url: "https://cardiffmiller.com/" },
+        { name: "Olafur Eliasson", url: "https://olafureliasson.net/" },
+        { name: "teamLab", url: "https://www.teamlab.art/" },
+        { name: "Random International", url: "https://www.random-international.com/" },
+      ],
+    },
+    {
+      id: "interactive",
+      title: "Interactive and computational work",
+      people: [
+        { name: "Camille Utterback", url: "http://camilleutterback.com/" },
+        { name: "Golan Levin", url: "https://www.flong.com/" },
+        { name: "Lauren Lee McCarthy", url: "https://get-lauren.net/" },
+        { name: "Memo Akten", url: "https://www.memo.tv/" },
+        { name: "Refik Anadol", url: "https://refikanadol.com/" },
+      ],
+    },
+    {
+      id: "moving-image",
+      title: "Moving image and sculptural media",
+      people: [
+        { name: "Matthew Barney", url: "http://drawingrestraint.net/" },
+        { name: "Tony Oursler", url: "https://tonyoursler.com/" },
+        { name: "Pipilotti Rist", url: "https://www.pipilottirist.net/" },
+        { name: "Bill Viola", url: "https://www.billviola.com/" },
+      ],
+    },
+    {
+      id: "sound",
+      title: "Sound, music, and wearables",
+      people: [
+        { name: "Imogen Heap", url: "https://imogenheap.com/" },
+        { name: "Laurie Anderson", url: "https://laurieanderson.com/" },
+        { name: "Holly Herndon", url: "https://holly.plus/" },
+        { name: "Pamela Z", url: "https://www.pamelaz.com/" },
+        { name: "Ryoji Ikeda", url: "https://www.ryojiikeda.com/" },
+      ],
+    },
+    {
+      id: "performance",
+      title: "Performance, body, and VR",
+      people: [
+        { name: "Stelarc", url: "https://stelarc.org/projects.php" },
+        { name: "Rebecca Allen", url: "https://www.rebeccaallen.com/" },
+        { name: "Marshmallow Laser Feast", url: "https://www.marshmallowlaserfeast.com/" },
+        { name: "Nonny de la Peña", url: "https://emblematicgroup.com/" },
       ],
     },
   ] satisfies ExampleGroup[],

@@ -164,9 +164,10 @@ a:hover {
   line-height: 1.35;
 }
 
+.guide-nav,
 .nav-group ul {
   list-style: none;
-  margin: 0;
+  margin: 0.8rem 0 0;
   padding: 0;
 }
 
@@ -880,6 +881,50 @@ textarea {
 .audit-toolbar .save-permanent {
   margin: 0;
   flex: 1 1 14rem;
+}
+
+.task {
+  margin-top: 2.5rem;
+  padding: 1rem 1.1rem 0.25rem;
+  background: var(--ask-bg);
+  border: 1px solid #e4d7ae;
+}
+
+.task h2 {
+  margin-top: 0.2rem;
+}
+
+.prompt-list {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+}
+
+.prompt-list li {
+  margin: 0.45rem 0;
+}
+
+.reference {
+  margin-top: 2rem;
+  border-top: 1px solid var(--line);
+  padding-top: 0.75rem;
+}
+
+.reference summary {
+  cursor: pointer;
+}
+
+.reference summary h2 {
+  display: inline;
+  margin: 0;
+}
+
+.reference summary .kicker {
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.reference-body {
+  padding-top: 0.85rem;
 }
 
 .audit-section {
