@@ -9,7 +9,6 @@ export function ExamplesPage() {
       wide
       sections={examplesPage.groups.map((group) => ({ id: group.id, label: group.title }))}
     >
-      <p>{examplesPage.note}</p>
       {examplesPage.groups.map((group) => (
         <section key={group.id} id={group.id}>
           <h2>{group.title}</h2>
@@ -26,7 +25,6 @@ export function ExamplesPage() {
                       <span className="visually-hidden"> (opens in a new tab)</span>
                     </a>
                   </p>
-                  <p>{person.notice}</p>
                 </article>
               ))}
             </div>
