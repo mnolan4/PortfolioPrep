@@ -5,7 +5,6 @@ export function ExamplesPage() {
   return (
     <Page
       title="Examples"
-      lede={examplesPage.lede}
       wide
       sections={examplesPage.groups.map((group) => ({ id: group.id, label: group.title }))}
     >

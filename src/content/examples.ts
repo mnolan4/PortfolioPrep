@@ -11,10 +11,8 @@ export interface ExampleGroup {
 }
 
 export const examplesPage: {
-  lede: string;
   groups: ExampleGroup[];
 } = {
-  lede: "Look at these for evidence, for role, and for whether you can tell what the person makes quickly. Do not copy their visual style.",
   groups: [
     {
       id: "alumni",
