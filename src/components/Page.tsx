@@ -22,7 +22,8 @@ export function Page({
     document.title = `${title} · Portfolio Prep`;
   }, [title]);
 
-  const index = guidePages.findIndex((page) => page.path === pathname);
+  const normalizedPathname = pathname.length > 1 ? pathname.replace(/\/+$/, "") : pathname;
+  const index = guidePages.findIndex((page) => page.path === normalizedPathname);
   const current = index >= 0 ? guidePages[index] : undefined;
   const prev = index > 0 ? guidePages[index - 1] : undefined;
   const next = index >= 0 && index < guidePages.length - 1 ? guidePages[index + 1] : undefined;
