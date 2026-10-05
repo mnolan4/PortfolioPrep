@@ -45,7 +45,7 @@ export const problems = {
       problem:
         "A long opening about your childhood and your path through school, before a single project.",
       hurts: "The first screen is where someone decides whether to stay. The essay hides the work.",
-      fix: "Four lines: who you are, what you make, who this is for, and which projects to open. Put longer reflection on a project page.",
+      fix: "Four lines: your name and focus, what you make, who this is for, and which projects to open. Put longer reflection on a project page.",
     },
     {
       title: "The Everything-I-Ever-Made Archive",

@@ -12,11 +12,11 @@ export const timedBands: { id: string; time: string; question: string; checks: s
   {
     id: "ten",
     time: "10 seconds",
-    question: "Who are you? What kind of work do you make?",
+    question: "What should a visitor understand about you and the work you make?",
     checks: [
-      "My name and a direction are visible quickly.",
-      "The kind of work I make is visible quickly.",
-      "The first screen is not a long introduction or a row of software logos.",
+      "The name I use and my creative direction are visible quickly.",
+      "A visitor can tell what kind of work I make.",
+      "The first screen leads with work, not a long introduction or a row of software logos.",
     ],
   },
   {
@@ -110,7 +110,7 @@ export const revisionLines: { id: string; label: string; hint: string }[] = [
 ];
 
 export const publishItems: string[] = [
-  "Identity is clear.",
+  "Name, role, and creative direction are clear.",
   "Strongest work appears first.",
   "Projects have clear descriptions.",
   "Individual roles are identified.",

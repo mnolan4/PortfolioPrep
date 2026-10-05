@@ -91,7 +91,7 @@ export const toolsPage = {
       goodFor:
         "A URL you can say in a hallway, with your name in it, and a résumé file that uses the same project titles as the site.",
       weak:
-        "A clever domain that hides your name. A résumé that lists different work than the site. The domain is a yearly cost at a registrar. Update the file when the portfolio changes. It is not a second identity.",
+        "A clever domain that hides your name. A résumé that lists different work than the site. The domain is a yearly cost at a registrar. Update the file when the portfolio changes. It is not a second brand.",
     },
   ] satisfies ToolOption[],
   tryThis:
