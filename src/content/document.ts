@@ -120,7 +120,7 @@ export const documentPage = {
   tryThis:
     "Film the interaction before you strike the set. A later screenshot of the software will not replace the room, the player, or the sound.",
   ask: [
-    "What evidence supports the claim that I know this tool?",
-    "If the installation were struck tonight, what record would I still have?",
+    "What evidence supports the claim that you know this tool?",
+    "If the installation were struck tonight, what record would you still have?",
   ],
 };

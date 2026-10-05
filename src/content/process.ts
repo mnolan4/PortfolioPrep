@@ -41,7 +41,7 @@ export const processPage = {
     },
   ],
   ask: [
-    "If I deleted this process image, would the project page say less? If not, cut it.",
-    "Did I write why the decision changed, or only that it changed?",
+    "If you deleted this process image, would the project page say less? If not, cut it.",
+    "Did you write why the decision changed, or only that it changed?",
   ],
 };

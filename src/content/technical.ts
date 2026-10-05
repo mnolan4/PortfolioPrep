@@ -55,5 +55,5 @@ export const technical = {
       ],
     },
   ],
-  ask: ["What evidence supports the claim that I know this tool?"],
+  ask: ["What evidence supports the claim that you know this tool?"],
 };

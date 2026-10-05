@@ -14,8 +14,8 @@ export const timedBands: { id: string; time: string; question: string; checks: s
     time: "10 seconds",
     question: "What should a visitor understand about you and the work you make?",
     checks: [
-      "The name I use and my creative direction are visible quickly.",
-      "A visitor can tell what kind of work I make.",
+      "The name you use and your creative direction are visible quickly.",
+      "A visitor can tell what kind of work you make.",
       "The first screen leads with work, not a long introduction or a row of software logos.",
     ],
   },
@@ -24,9 +24,9 @@ export const timedBands: { id: string; time: string; question: string; checks: s
     time: "30 seconds",
     question: "What are your strongest projects? What did you contribute?",
     checks: [
-      "My strongest projects are easy to find.",
-      "My role is visible on those projects.",
-      "A visitor could say what I contributed without opening another document.",
+      "Your strongest projects are easy to find.",
+      "Your role is visible on those projects.",
+      "A visitor could say what you contributed without opening another document.",
     ],
   },
   {
@@ -34,9 +34,9 @@ export const timedBands: { id: string; time: string; question: string; checks: s
     time: "3 minutes",
     question: "How do you think? What can you actually do? Why should someone keep exploring?",
     checks: [
-      "At least one project page shows a decision I changed.",
-      "There is evidence of fundamentals, teamwork, a change I made, and a creative decision.",
-      "It is clear what I personally contributed.",
+      "At least one project page shows a decision you changed.",
+      "There is evidence of fundamentals, teamwork, a change you made, and a creative decision.",
+      "What you personally contributed is clear.",
       "There is a clear reason to open a second project.",
     ],
   },
