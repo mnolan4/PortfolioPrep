@@ -13,6 +13,7 @@ export function DefinePage() {
       sections={[
         { id: "audience", label: "Who it is for" },
         { id: "evidence", label: "Evidence" },
+        { id: "qualities", label: "What to show" },
         { id: "outside", label: "An outside reader" },
         { id: "lenses", label: "Lenses" },
         { id: "task", label: "In your notes" },
@@ -52,6 +53,16 @@ export function DefinePage() {
         <h2 id="think">{defineChapter.both.title}</h2>
         {defineChapter.both.paragraphs.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
+        ))}
+      </section>
+      <section id="qualities">
+        <h2>{defineChapter.qualities.title}</h2>
+        <p>{defineChapter.qualities.intro}</p>
+        {defineChapter.qualities.items.map((item) => (
+          <section key={item.title}>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </section>
         ))}
       </section>
       <section id="outside">

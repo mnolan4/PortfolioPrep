@@ -35,7 +35,7 @@ export const timedBands: { id: string; time: string; question: string; checks: s
     question: "How do you think? What can you actually do? Why should someone keep exploring?",
     checks: [
       "At least one project page shows a decision I changed.",
-      "There is evidence of technical, creative, or design ability.",
+      "There is evidence of fundamentals, teamwork, a change I made, and a creative decision.",
       "It is clear what I personally contributed.",
       "There is a clear reason to open a second project.",
     ],
@@ -140,6 +140,7 @@ export const selfAuditStages: SelfAuditStage[] = [
       "What should that person understand about you?",
       "What kind of work do you want more chances to make?",
       "Write the sentence you want a stranger to repeat after they close the tab.",
+      "Which project shows fundamentals, which shows teamwork, which shows a change you made, and which shows a creative decision?",
     ],
   },
   {

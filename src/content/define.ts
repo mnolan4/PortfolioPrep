@@ -23,6 +23,29 @@ export const defineChapter = {
       "Your portfolio should demonstrate both what you can make and how you think. A finished image without a decision is only half. A folder of process files without the resulting experience is the other half, missing.",
     ],
   },
+  qualities: {
+    title: "Four things a reader should be able to trust",
+    intro:
+      "Strong fundamentals, teamwork, adaptability, and creativity. A sentence claiming them is not the evidence. Each one needs a project that shows it.",
+    items: [
+      {
+        title: "Strong fundamentals",
+        text: "Show the craft. A reader should be able to see that you can build, record, design, or fabricate the thing you claim. A tool logo does not do that. The working piece does.",
+      },
+      {
+        title: "Teamwork",
+        text: "Name the team, your part, and the parts that were not yours. Teamwork is visible when a stranger can tell how the work was shared.",
+      },
+      {
+        title: "Adaptability",
+        text: "Show a change you made when the room, the player, the material, or the deadline did not match the plan. The revision is the evidence.",
+      },
+      {
+        title: "Creativity",
+        text: "Show a decision that was yours: the concept, the form, the interaction, or the sound. Execution without a choice is a demo.",
+      },
+    ],
+  },
   outsideReader: {
     title: "Design for someone outside your program",
     paragraphs: [
