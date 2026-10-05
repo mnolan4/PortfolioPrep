@@ -1,7 +1,7 @@
 export const defineChapter = {
   title: "Define",
   lede: "A portfolio is a set of choices about evidence. Name who it is for before you decide what stays on the first screen.",
-  who: "Immersive Media Design students, and readers who do not know the program.",
+  who: "See Places tab to the left",
   canDo: "Choose what to show, explain your role, and leave with revisions you can finish.",
   outside:
     "That reader might be a festival, a lab, a museum, a studio, a creative technology firm, a design agency, a graduate program, an internship, or a collaborator.",
