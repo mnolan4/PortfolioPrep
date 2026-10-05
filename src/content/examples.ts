@@ -53,7 +53,7 @@ export const examplesPage: {
           url: "http://www.ian-mcd.com/",
         },
         {
-          name: "Matt Nolan",
+          name: "A E Labs",
           url: "https://mnolan4.github.io/Fairness/",
         },
         {
