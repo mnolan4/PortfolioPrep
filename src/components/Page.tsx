@@ -43,7 +43,7 @@ export function Page({
             </>
           )
         ) : (
-          "Self-Audit · prompts for your own notes"
+          "Six Steps to polish your portfolio"
         )}
       </p>
       <header className="page-head">
