@@ -122,6 +122,15 @@ export const examplesPage: {
       ],
     },
     {
+      id: "critical-media",
+      title: "Critical media and intervention",
+      people: [
+        { name: "Hito Steyerl", url: "https://www.hitosteyerl.net/" },
+        { name: "Harun Farocki", url: "https://www.harunfarocki.de/home.html" },
+        { name: "Critical Art Ensemble", url: "https://critical-art.net/" },
+      ],
+    },
+    {
       id: "sound",
       title: "Sound, music, and wearables",
       people: [
