@@ -104,7 +104,6 @@ export function Layout() {
             Self-Audit
             <span>Prompts for your own notes</span>
           </NavLink>
-          <p className="save-permanent">This site stores nothing.</p>
         </div>
       </div>
       <main id="content" className="main" ref={mainRef} tabIndex={-1}>

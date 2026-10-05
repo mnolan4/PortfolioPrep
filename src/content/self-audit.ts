@@ -200,7 +200,7 @@ export const selfAuditStages: SelfAuditStage[] = [
 ];
 
 export const selfAuditPage = {
-  lede: "A set of questions to answer in your own notes. This site stores nothing.",
+  lede: "A set of questions to answer in your own notes.",
   note: "Copy them or print them. Write in a notebook, a document, or wherever you already keep project notes.",
 };
 
