@@ -7,6 +7,7 @@ import { ExamplesPage } from "./pages/ExamplesPage";
 import { ExplainPage } from "./pages/ExplainPage";
 import { LegacyRedirect } from "./pages/LegacyRedirect";
 import { NotFoundPage } from "./pages/NotFoundPage";
+import { PlacesPage } from "./pages/PlacesPage";
 import { RevisePage } from "./pages/RevisePage";
 import { SelfAuditPage } from "./pages/SelfAuditPage";
 import { TestPage } from "./pages/TestPage";
@@ -18,6 +19,7 @@ export function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<DefinePage />} />
+          <Route path="places" element={<PlacesPage />} />
           <Route path="curate" element={<CuratePage />} />
           <Route path="examples" element={<ExamplesPage />} />
           <Route path="document" element={<DocumentPage />} />

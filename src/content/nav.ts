@@ -18,6 +18,7 @@ export const stages: { id: StageId; label: string; blurb: string }[] = [
 
 export const guidePages: GuidePage[] = [
   { path: "/", label: "Define", title: "Define", stage: "define" },
+  { path: "/places", label: "Places", title: "Places You Might Send Your Portfolio", stage: "define" },
   { path: "/curate", label: "Curate", title: "Curate", stage: "curate" },
   { path: "/examples", label: "Examples", title: "Examples", stage: "curate" },
   { path: "/document", label: "Document", title: "Document", stage: "document" },
