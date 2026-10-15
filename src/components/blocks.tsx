@@ -170,20 +170,6 @@ export function Reminder({ title, to, children }: { title: string; to: string; c
   );
 }
 
-export function SectionNav({ items }: { items: { id: string; label: string }[] }) {
-  return (
-    <nav className="section-nav" aria-label="On this page">
-      <ol>
-        {items.map((item) => (
-          <li key={item.id}>
-            <a href={`#${item.id}`}>{item.label}</a>
-          </li>
-        ))}
-      </ol>
-    </nav>
-  );
-}
-
 export function ChapterTask({ id }: { id: SelfAuditStage["id"] }) {
   const stage = selfAuditStages.find((item) => item.id === id);
   if (!stage) return null;

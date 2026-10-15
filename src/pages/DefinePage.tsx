@@ -10,14 +10,6 @@ export function DefinePage() {
       lede={defineChapter.lede}
       wide
       showLocation={false}
-      sections={[
-        { id: "audience", label: "Who it is for" },
-        { id: "evidence", label: "Evidence" },
-        { id: "qualities", label: "What to show" },
-        { id: "outside", label: "An outside reader" },
-        { id: "lenses", label: "Lenses" },
-        { id: "task", label: "In your notes" },
-      ]}
     >
       <div className="panel-grid">
         <Panel tone="blue" title="Who it is for" heading="h2">

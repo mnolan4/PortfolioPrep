@@ -11,13 +11,6 @@ export function DocumentPage() {
       lede={documentPage.lede}
       wide
       showLocation={false}
-      sections={[
-        { id: "capture", label: "Capture" },
-        { id: "process", label: "Decisions" },
-        { id: "media", label: "Media" },
-        { id: "types", label: "By project type" },
-        { id: "task", label: "In your notes" },
-      ]}
     >
       <Outcomes items={["Record the encounter while the work still exists.", "Keep a decision only when you can say what changed.", "Caption the image so a stranger knows what they are seeing."]} />
       <section id="capture">

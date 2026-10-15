@@ -1,21 +1,18 @@
 import { useEffect, type ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { guidePages, stageLabel } from "../content/nav";
-import { SectionNav } from "./blocks";
 
 export function Page({
   title,
   lede,
   wide = false,
   showLocation = true,
-  sections,
   children,
 }: {
   title: string;
   lede?: string;
   wide?: boolean;
   showLocation?: boolean;
-  sections?: { id: string; label: string }[];
   children: ReactNode;
 }) {
   const { pathname } = useLocation();
@@ -55,7 +52,6 @@ export function Page({
         <h1>{title}</h1>
         {lede ? <p className="lede">{lede}</p> : null}
       </header>
-      {sections && sections.length > 0 ? <SectionNav items={sections} /> : null}
       <div className="page-body">{children}</div>
       <nav className="page-end noprint" aria-label="Continue">
         {current ? (

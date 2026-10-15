@@ -10,15 +10,6 @@ export function ExplainPage() {
       lede={explainChapter.lede}
       wide
       showLocation={false}
-      sections={[
-        { id: "structure", label: "Project page" },
-        { id: "pairs", label: "Weak and better" },
-        { id: "authorship", label: "Authorship" },
-        { id: "name", label: "Credits" },
-        { id: "interdisciplinary", label: "Hybrid work" },
-        { id: "identity", label: "One sentence" },
-        { id: "task", label: "In your notes" },
-      ]}
     >
       <Outcomes items={explainChapter.outcomes} />
       <section id="structure">

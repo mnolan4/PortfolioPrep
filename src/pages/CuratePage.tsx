@@ -10,11 +10,6 @@ export function CuratePage() {
       lede={problems.lede}
       wide
       showLocation={false}
-      sections={[
-        { id: "choosing", label: "What stays" },
-        { id: "problems", label: "Common failures" },
-        { id: "task", label: "In your notes" },
-      ]}
     >
       <Outcomes items={problems.outcomes} />
       <section id="choosing">

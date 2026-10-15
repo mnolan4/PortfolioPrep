@@ -11,14 +11,6 @@ export function RevisePage() {
       lede="Change a few things a stranger will actually meet. The portfolio is also a project: the phone, the file, and the link are part of the work."
       wide
       showLocation={false}
-      sections={[
-        { id: "choices", label: "What to change" },
-        { id: "today", label: "Today" },
-        { id: "publish", label: "Before you send it" },
-        { id: "technical", label: "The site itself" },
-        { id: "tools", label: "Where it lives" },
-        { id: "task", label: "In your notes" },
-      ]}
     >
       <Outcomes
         items={[

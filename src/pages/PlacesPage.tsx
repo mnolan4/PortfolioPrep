@@ -9,13 +9,6 @@ export function PlacesPage() {
       lede={placesPage.lede}
       wide
       showLocation={false}
-      sections={[
-        ...placesPage.destinations.map((destination) => ({
-          id: destination.id,
-          label: destination.title,
-        })),
-        { id: "task", label: "In your notes" },
-      ]}
     >
       <Outcomes items={placesPage.outcomes} />
       <Panel title="Keep one body of evidence">

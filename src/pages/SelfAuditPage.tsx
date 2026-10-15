@@ -15,7 +15,6 @@ export function SelfAuditPage() {
     <Page
       title="Portfolio Audit"
       lede={selfAuditPage.lede}
-      sections={selfAuditStages.map((stage) => ({ id: stage.id, label: stage.title }))}
     >
       <p>{selfAuditPage.note}</p>
       <div className="panel-grid">

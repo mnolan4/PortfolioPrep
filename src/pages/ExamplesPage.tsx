@@ -8,7 +8,6 @@ export function ExamplesPage() {
       title="Learn from how artists present their work."
       wide
       showLocation={false}
-      sections={examplesPage.groups.map((group) => ({ id: group.id, label: group.title }))}
     >
       {examplesPage.groups.map((group) => (
         <section key={group.id} id={group.id}>

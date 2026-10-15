@@ -22,12 +22,6 @@ export function TestPage() {
       title="See what a reader can actually tell."
       lede="Open the portfolio. See what a stranger can actually tell, first by yourself and then with another person."
       showLocation={false}
-      sections={[
-        { id: "timed", label: "Timed test" },
-        { id: "evidence", label: "Evidence" },
-        { id: "critique", label: "Another person" },
-        { id: "task", label: "In your notes" },
-      ]}
     >
       <Outcomes
         items={[

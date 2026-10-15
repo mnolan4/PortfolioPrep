@@ -11,12 +11,6 @@ export function HomePage() {
       lede={homePage.lede}
       wide
       showLocation={false}
-      sections={[
-        { id: "for", label: "Who this site is for" },
-        { id: "guide", label: "The guide" },
-        { id: "how", label: "How to use it" },
-        { id: "made", label: "How it was made" },
-      ]}
     >
       <Panel id="for" title={homePage.for.title} heading="h2">
         <p>{homePage.for.text}</p>
