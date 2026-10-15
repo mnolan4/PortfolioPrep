@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import { ChapterTask, Outcomes } from "../components/blocks";
+import { ChapterTask, Outcomes, Panel } from "../components/blocks";
 import { Page } from "../components/Page";
 import { defineChapter } from "../content/define";
-import { firstPath, stages } from "../content/nav";
 
 export function DefinePage() {
   return (
@@ -10,6 +9,7 @@ export function DefinePage() {
       title={defineChapter.title}
       lede={defineChapter.lede}
       wide
+      showLocation={false}
       sections={[
         { id: "audience", label: "Who it is for" },
         { id: "evidence", label: "Evidence" },
@@ -19,71 +19,64 @@ export function DefinePage() {
         { id: "task", label: "In your notes" },
       ]}
     >
-      <dl className="home-facts">
-        <div>
-          <dt>Who it is for</dt>
-          <dd>{defineChapter.who}</dd>
-        </div>
-        <div>
-          <dt>What you can do</dt>
-          <dd>{defineChapter.canDo}</dd>
-        </div>
-      </dl>
-      <ol className="stage-jump">
-        {stages.map((stage, index) => (
-          <li key={stage.id}>
-            <Link to={firstPath(stage.id)}>
-              <span className="num">{String(index + 1).padStart(2, "0")}</span>
-              <span className="name">{stage.label}</span>
-              <span className="blurb">{stage.blurb}</span>
-            </Link>
-          </li>
-        ))}
-      </ol>
+      <div className="panel-grid">
+        <Panel tone="blue" title="Who it is for" heading="h2">
+          <p>{defineChapter.who}</p>
+        </Panel>
+        <Panel tone="blue" title="What you can do" heading="h2">
+          <p>{defineChapter.canDo}</p>
+        </Panel>
+      </div>
       <section id="audience">
-        <h2>Who it is for</h2>
         <Outcomes items={defineChapter.outcomes} />
-        <p>{defineChapter.outside}</p>
+        <Panel title="Who it is for" heading="h2">
+          <p>{defineChapter.outside}</p>
+        </Panel>
       </section>
-      <section id="evidence">
-        <h2>{defineChapter.evidence.title}</h2>
-        {defineChapter.evidence.paragraphs.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
-        <h2 id="think">{defineChapter.both.title}</h2>
-        {defineChapter.both.paragraphs.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
-      </section>
+      <div className="panel-grid" id="evidence">
+        <Panel title={defineChapter.evidence.title} heading="h2">
+          {defineChapter.evidence.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </Panel>
+        <Panel id="think" title={defineChapter.both.title} heading="h2">
+          {defineChapter.both.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </Panel>
+      </div>
       <section id="qualities">
-        <h2>{defineChapter.qualities.title}</h2>
-        <p>{defineChapter.qualities.intro}</p>
-        {defineChapter.qualities.items.map((item) => (
-          <section key={item.title}>
-            <h3>{item.title}</h3>
-            <p>{item.text}</p>
-          </section>
-        ))}
+        <Panel title={defineChapter.qualities.title} heading="h2">
+          <p>{defineChapter.qualities.intro}</p>
+        </Panel>
+        <div className="panel-grid">
+          {defineChapter.qualities.items.map((item) => (
+            <Panel key={item.title} title={item.title}>
+              <p>{item.text}</p>
+            </Panel>
+          ))}
+        </div>
       </section>
       <section id="outside">
-        <h2>{defineChapter.outsideReader.title}</h2>
-        {defineChapter.outsideReader.paragraphs.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
-        {defineChapter.principles.map((principle) => (
-          <section key={principle.id} id={principle.id}>
-            <h3>{principle.title}</h3>
-            <p>{principle.text}</p>
-            <p>
-              <Link to={principle.to}>Continue</Link>
-            </p>
-          </section>
-        ))}
+        <Panel title={defineChapter.outsideReader.title} heading="h2">
+          {defineChapter.outsideReader.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </Panel>
+        <div className="panel-grid">
+          {defineChapter.principles.map((principle) => (
+            <Panel key={principle.id} id={principle.id} title={principle.title}>
+              <p>{principle.text}</p>
+              <p>
+                <Link to={principle.to}>Continue</Link>
+              </p>
+            </Panel>
+          ))}
+        </div>
       </section>
-      <section id="lenses">
-        <h2>Directions are lenses</h2>
+      <Panel id="lenses" title="Directions are lenses" heading="h2">
         <p>{defineChapter.lenses}</p>
-      </section>
+      </Panel>
       <ChapterTask id="define" />
     </Page>
   );

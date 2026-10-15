@@ -1,4 +1,4 @@
-import { ChapterTask, Callout, ExampleComparison, Outcomes, ProjectTypeGuide, StepList } from "../components/blocks";
+import { ChapterTask, Callout, ExampleComparison, Outcomes, Panel, ProjectTypeGuide, StepList } from "../components/blocks";
 import { Page } from "../components/Page";
 import { documentPage, projectTypes } from "../content/document";
 import { mediaPage } from "../content/media";
@@ -7,9 +7,10 @@ import { processPage } from "../content/process";
 export function DocumentPage() {
   return (
     <Page
-      title="Document"
+      title="Show what the experience was really like."
       lede={documentPage.lede}
       wide
+      showLocation={false}
       sections={[
         { id: "capture", label: "Capture" },
         { id: "process", label: "Decisions" },
@@ -20,29 +21,30 @@ export function DocumentPage() {
     >
       <Outcomes items={["Record the encounter while the work still exists.", "Keep a decision only when you can say what changed.", "Caption the image so a stranger knows what they are seeing."]} />
       <section id="capture">
-        <h2>Capture the encounter</h2>
-        <Callout tone="try">
-          <p>{documentPage.tryThis}</p>
-        </Callout>
-        <p>
-          Lead with play, the room, the sound, or a person using the work. Keep one view of the software only when a caption says what that view is doing.
-        </p>
+        <Panel title="Capture the encounter" heading="h2">
+          <Callout tone="try">
+            <p>{documentPage.tryThis}</p>
+          </Callout>
+          <p>
+            Lead with play, the room, the sound, or a person using the work. Keep one view of the software only when a caption says what that view is doing.
+          </p>
+        </Panel>
       </section>
       <section id="process">
-        <h2>Show why a decision changed</h2>
-        <p>{processPage.lede}</p>
-        <section id="framework">
-          <h3>One sequence</h3>
-          <StepList items={processPage.steps} />
-        </section>
-        <section id="floor" className="card example-story">
-          <h3>A floor that nobody understood</h3>
-          <StepList items={processPage.floor} />
-        </section>
-        <section id="sound" className="card example-story">
-          <h3>A mix written for the wrong room</h3>
-          <StepList items={processPage.sound} />
-        </section>
+        <Panel title="Show why a decision changed" heading="h2">
+          <p>{processPage.lede}</p>
+        </Panel>
+        <div className="panel-grid">
+          <Panel id="framework" title="One sequence">
+            <StepList items={processPage.steps} />
+          </Panel>
+          <Panel id="floor" title="A floor that nobody understood">
+            <StepList items={processPage.floor} />
+          </Panel>
+          <Panel id="sound" title="A mix written for the wrong room">
+            <StepList items={processPage.sound} />
+          </Panel>
+        </div>
       </section>
       <section id="media">
         <h2>Make the picture mean something</h2>

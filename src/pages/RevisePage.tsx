@@ -1,4 +1,4 @@
-import { ChapterTask, Outcomes } from "../components/blocks";
+import { ChapterTask, Outcomes, Panel } from "../components/blocks";
 import { Page } from "../components/Page";
 import { publishItems, revisionLines } from "../content/self-audit";
 import { technical } from "../content/technical";
@@ -7,9 +7,10 @@ import { toolsPage } from "../content/tools";
 export function RevisePage() {
   return (
     <Page
-      title="Revise"
+      title="Make the next version stronger."
       lede="Change a few things a stranger will actually meet. The portfolio is also a project: the phone, the file, and the link are part of the work."
       wide
+      showLocation={false}
       sections={[
         { id: "choices", label: "What to change" },
         { id: "today", label: "Today" },
@@ -36,10 +37,9 @@ export function RevisePage() {
           ))}
         </dl>
       </section>
-      <section id="today" className="card today-card">
-        <h2>What can you do today?</h2>
+      <Panel as="section" id="today" tone="blue" title="What can you do today?" heading="h2">
         <p>A caption, a credit, a cut, or a clip. Not a new website.</p>
-      </section>
+      </Panel>
       <section id="publish">
         <h2>Before you send the link</h2>
         <p>Walk through the live site. These are things a visitor can check.</p>
@@ -77,10 +77,9 @@ export function RevisePage() {
           <section id="options">
             <h3>Tradeoffs</h3>
             <p>{toolsPage.optionsIntro}</p>
-            <div className="type-list">
+            <div className="panel-grid">
               {toolsPage.options.map((option) => (
-                <article key={option.id} id={option.id} className="card option-card">
-                  <h3>{option.name}</h3>
+                <Panel key={option.id} id={option.id} title={option.name}>
                   <p>
                     <strong>Useful when. </strong>
                     {option.goodFor}
@@ -89,7 +88,7 @@ export function RevisePage() {
                     <strong>Watch for. </strong>
                     {option.weak}
                   </p>
-                </article>
+                </Panel>
               ))}
             </div>
           </section>

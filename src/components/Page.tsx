@@ -1,18 +1,20 @@
 import { useEffect, type ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { firstPath, guidePages, stageLabel, stages, type StageId } from "../content/nav";
+import { guidePages, stageLabel } from "../content/nav";
 import { SectionNav } from "./blocks";
 
 export function Page({
   title,
   lede,
   wide = false,
+  showLocation = true,
   sections,
   children,
 }: {
   title: string;
   lede?: string;
   wide?: boolean;
+  showLocation?: boolean;
   sections?: { id: string; label: string }[];
   children: ReactNode;
 }) {
@@ -31,22 +33,24 @@ export function Page({
   return (
     <article className={wide ? "page wide" : "page"}>
       <p className="print-banner">Portfolio Prep</p>
-      <StageTrail current={current?.stage} />
-      <p className="where">
-        {current ? (
-          current.label === stageLabel(current.stage) ? (
-            stageLabel(current.stage)
+      <StageTrail currentPath={current?.path} />
+      {showLocation ? (
+        <p className="where">
+          {current?.stage ? (
+            current.label === stageLabel(current.stage) ? (
+              stageLabel(current.stage)
+            ) : (
+              <>
+                {stageLabel(current.stage)}
+                <span aria-hidden="true"> · </span>
+                {current.label}
+              </>
+            )
           ) : (
-            <>
-              {stageLabel(current.stage)}
-              <span aria-hidden="true"> · </span>
-              {current.label}
-            </>
-          )
-        ) : (
-          "Six Steps to polish your portfolio"
-        )}
-      </p>
+            "Six Steps to polish your portfolio"
+          )}
+        </p>
+      ) : null}
       <header className="page-head">
         <h1>{title}</h1>
         {lede ? <p className="lede">{lede}</p> : null}
@@ -65,7 +69,7 @@ export function Page({
               <span />
             )}
             <Link to="/audit" className="page-end-audit">
-              Self-Audit
+              Portfolio Audit
             </Link>
             {next ? (
               <Link to={next.path} className="page-end-next">
@@ -79,7 +83,7 @@ export function Page({
         ) : (
           <Link to="/" className="page-end-next">
             Return
-            <span>Define</span>
+            <span>Home</span>
           </Link>
         )}
       </nav>
@@ -87,14 +91,15 @@ export function Page({
   );
 }
 
-function StageTrail({ current }: { current?: StageId }) {
+function StageTrail({ currentPath }: { currentPath?: string }) {
+  const pages = guidePages.filter((page) => page.path !== "/");
   return (
-    <nav className="stage-trail" aria-label="Stages">
+    <nav className="stage-trail" aria-label="Guide">
       <ol>
-        {stages.map((stage) => (
-          <li key={stage.id}>
-            <Link to={firstPath(stage.id)} aria-current={stage.id === current ? "step" : undefined}>
-              {stage.label}
+        {pages.map((page) => (
+          <li key={page.path}>
+            <Link to={page.path} aria-current={page.path === currentPath ? "page" : undefined}>
+              {page.label}
             </Link>
           </li>
         ))}

@@ -1,5 +1,5 @@
 export const defineChapter = {
-  title: "Define",
+  title: "Who is a portfolio for and what should they know?",
   lede: "A portfolio is a set of choices about evidence. Name who it is for before you decide what stays on the first screen.",
   who: "See Places tab to the left",
   canDo: "Choose what to show, explain your role, and leave with revisions you can finish.",

@@ -1,5 +1,5 @@
 export const explainChapter = {
-  title: "Explain",
+  title: "Make your role and decisions clear.",
   lede: "A project page is a short case study: the same parts, in an order a stranger can learn. Repeat the structure. Change the evidence.",
   outcomes: [
     "Draft a project page a reader can follow without the syllabus.",

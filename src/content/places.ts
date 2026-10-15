@@ -15,7 +15,7 @@ export const placesPage: {
   task: string;
   prompts: string[];
 } = {
-  title: "Places You Might Send Your Portfolio",
+  title: "Where might your portfolio go?",
   lede:
     "The same work can serve several audiences, but the same order and explanation will not serve all of them.",
   outcomes: [

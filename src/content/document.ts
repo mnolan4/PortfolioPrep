@@ -37,7 +37,7 @@ export const projectTypes: ProjectType[] = [
     capture:
       "A wide shot for scale, a close-up of the action that triggers the work, and a clip of the work changing because of a person.",
     explain: "What a visitor does in the first minute, and what the system does back.",
-    mistake: "A beauty photograph of an empty room, or only the sensor taped to a truss.",
+    mistake: "A beautiful photograph of an empty room, or only the sensor taped to a truss.",
     evidence:
       "Someone crosses the space and the image, sound, or object responds. One extra shot can show the hardware.",
   },

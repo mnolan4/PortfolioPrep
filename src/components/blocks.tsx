@@ -1,17 +1,51 @@
 import { Link } from "react-router-dom";
-import type { ReactNode } from "react";
+import type { ElementType, ReactNode } from "react";
 import { selfAuditStages, type SelfAuditStage } from "../content/self-audit";
+
+export function Panel({
+  as: Tag = "article",
+  id,
+  tone = "green",
+  title,
+  heading: Heading = "h3",
+  index,
+  compact = false,
+  children,
+}: {
+  as?: ElementType;
+  id?: string;
+  tone?: "green" | "blue";
+  title?: string;
+  heading?: "h2" | "h3";
+  index?: string;
+  compact?: boolean;
+  children: ReactNode;
+}) {
+  return (
+    <Tag
+      id={id}
+      className={`panel panel-${tone}${compact ? " panel-compact" : ""}`}
+    >
+      {index ? (
+        <span className="panel-index" aria-hidden="true">
+          {index}
+        </span>
+      ) : null}
+      {title ? <Heading className="panel-title">{title}</Heading> : null}
+      <div className="panel-body">{children}</div>
+    </Tag>
+  );
+}
 
 export function Outcomes({ items }: { items: string[] }) {
   return (
-    <div className="outcomes">
-      <p>By the end of this section, you should be able to:</p>
+    <Panel tone="blue" title="By the end of this section, you should be able to:">
       <ul>
         {items.map((item) => (
           <li key={item}>{item}</li>
         ))}
       </ul>
-    </div>
+    </Panel>
   );
 }
 
@@ -67,22 +101,23 @@ export function ProblemCard({
   problem,
   hurts,
   fix,
+  index,
 }: {
   title: string;
   problem: string;
   hurts: string;
   fix: string;
+  index?: number;
 }) {
   return (
-    <article className="card problem-card">
-      <h3>{title}</h3>
+    <Panel title={title} index={index ? `Field note · ${String(index).padStart(2, "0")}` : undefined}>
       <h4>The problem</h4>
       <p>{problem}</p>
       <h4>Why it hurts</h4>
       <p>{hurts}</p>
       <h4>The fix</h4>
       <p>{fix}</p>
-    </article>
+    </Panel>
   );
 }
 
@@ -111,9 +146,8 @@ export function ProjectTypeGuide({
     ["Good evidence", evidence],
   ];
   return (
-    <article className="card type-guide" id={id}>
-      <h3>{title}</h3>
-      <dl>
+    <Panel id={id} title={title}>
+      <dl className="type-guide">
         {rows.map(([label, text]) => (
           <div key={label}>
             <dt>{label}</dt>
@@ -121,7 +155,7 @@ export function ProjectTypeGuide({
           </div>
         ))}
       </dl>
-    </article>
+    </Panel>
   );
 }
 
@@ -154,9 +188,8 @@ export function ChapterTask({ id }: { id: SelfAuditStage["id"] }) {
   const stage = selfAuditStages.find((item) => item.id === id);
   if (!stage) return null;
   return (
-    <section className="task" id="task">
+    <Panel as="section" id="task" tone="blue" title="In your own notes" heading="h2">
       <p className="kicker">{stage.verb}</p>
-      <h2>In your own notes</h2>
       <p>{stage.task}</p>
       <ul className="prompt-list">
         {stage.prompts.map((prompt) => (
@@ -164,9 +197,9 @@ export function ChapterTask({ id }: { id: SelfAuditStage["id"] }) {
         ))}
       </ul>
       <p>
-        <Link to={`/audit#${stage.id}`}>All the prompts are on the Self-Audit.</Link>
+        <Link to={`/audit#${stage.id}`}>All the prompts are on the Portfolio Audit.</Link>
       </p>
-    </section>
+    </Panel>
   );
 }
 

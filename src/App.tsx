@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { CuratePage } from "./pages/CuratePage";
 import { DefinePage } from "./pages/DefinePage";
+import { HomePage } from "./pages/HomePage";
 import { DocumentPage } from "./pages/DocumentPage";
 import { ExamplesPage } from "./pages/ExamplesPage";
 import { ExplainPage } from "./pages/ExplainPage";
@@ -18,7 +19,8 @@ export function App() {
     <BrowserRouter basename="/PortfolioPrep">
       <Routes>
         <Route element={<Layout />}>
-          <Route index element={<DefinePage />} />
+          <Route index element={<HomePage />} />
+          <Route path="define" element={<DefinePage />} />
           <Route path="places" element={<PlacesPage />} />
           <Route path="curate" element={<CuratePage />} />
           <Route path="examples" element={<ExamplesPage />} />

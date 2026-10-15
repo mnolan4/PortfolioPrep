@@ -134,7 +134,7 @@ export const selfAuditStages: SelfAuditStage[] = [
     id: "define",
     title: "Define",
     verb: "Write",
-    task: "Open the portfolio beside a notebook. Write these where you keep notes. This site does not store them.",
+    task: "Open the portfolio beside a notebook. Write these where you keep notes.",
     prompts: [
       "Who is this portfolio for? Name a person, not a category.",
       "What should that person understand about you?",
@@ -202,34 +202,5 @@ export const selfAuditStages: SelfAuditStage[] = [
 
 export const selfAuditPage = {
   lede: "A set of questions to answer in your own notes.",
-  note: "Copy them or print them. Write in a notebook, a document, or wherever you already keep project notes.",
+  note: "Use a notebook, a document, or wherever you already keep project notes.",
 };
-
-export function selfAuditPlain(): string {
-  const stages = selfAuditStages
-    .map((stage) => `${stage.title}\n${stage.task}\n\n${numbered(stage.prompts)}`)
-    .join("\n\n");
-  const timed = timedBands
-    .map((band) => `${band.time}\n${band.question}\n${band.checks.map((item) => `- ${item}`).join("\n")}`)
-    .join("\n\n");
-  const evidence = evidenceCategories
-    .map((item) => `- ${item.label}: ${item.description}`)
-    .join("\n");
-  const critique = numbered(critiqueQuestions);
-  const revisions = revisionLines.map((item) => `- ${item.label} — ${item.hint}`).join("\n");
-  const publish = publishItems.map((item) => `- ${item}`).join("\n");
-  return [
-    "Portfolio Prep — Self-Audit",
-    "Write these in your own notes. The site does not store them.",
-    stages,
-    `Timed test\n\n${timed}`,
-    `Evidence to notice\n\n${evidence}`,
-    `Questions for another person\n\n${critique}`,
-    `Revisions\n\n${revisions}`,
-    `Before you send the link\n\n${publish}`,
-  ].join("\n\n");
-}
-
-function numbered(items: string[]): string {
-  return items.map((item, index) => `${index + 1}. ${item}`).join("\n");
-}

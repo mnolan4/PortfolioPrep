@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Panel } from "../components/blocks";
 import { Page } from "../components/Page";
 import {
   critiqueQuestions,
@@ -6,79 +6,48 @@ import {
   publishItems,
   revisionLines,
   selfAuditPage,
-  selfAuditPlain,
   selfAuditStages,
   timedBands,
 } from "../content/self-audit";
 
 export function SelfAuditPage() {
-  const [copied, setCopied] = useState(false);
-  const plain = selfAuditPlain();
-
-  async function copyAll() {
-    try {
-      await navigator.clipboard.writeText(plain);
-      setCopied(true);
-    } catch {
-      setCopied(false);
-    }
-  }
-
   return (
     <Page
-      title="Self-Audit"
+      title="Portfolio Audit"
       lede={selfAuditPage.lede}
       sections={selfAuditStages.map((stage) => ({ id: stage.id, label: stage.title }))}
     >
       <p>{selfAuditPage.note}</p>
-      <div className="noprint worksheet-actions">
-        <button type="button" className="button button-secondary" onClick={() => void copyAll()}>
-          Copy all prompts
-        </button>
-        <button type="button" className="button button-secondary" onClick={() => window.print()}>
-          Print prompts
-        </button>
-        {copied ? (
-          <p className="hint" role="status">
-            Copied.
-          </p>
-        ) : null}
-      </div>
-      <details className="plain-copy noprint">
-        <summary>Show every prompt as plain text</summary>
-        <pre>{plain}</pre>
-      </details>
-      {selfAuditStages.map((stage) => (
-        <section key={stage.id} id={stage.id}>
-          <h2>
-            {stage.title}
+      <div className="panel-grid">
+        {selfAuditStages.map((stage) => (
+          <Panel key={stage.id} id={stage.id} title={stage.title} heading="h2">
             {stage.id === "define" ? <span id="purpose" className="visually-hidden" /> : null}
             {stage.id === "curate" ? <span id="curation" className="visually-hidden" /> : null}
-          </h2>
-          <p>{stage.task}</p>
-          <ol className="prompt-list">
-            {stage.prompts.map((prompt) => (
-              <li key={prompt}>{prompt}</li>
-            ))}
-          </ol>
-        </section>
-      ))}
+            <p>{stage.task}</p>
+            <ol className="prompt-list">
+              {stage.prompts.map((prompt) => (
+                <li key={prompt}>{prompt}</li>
+              ))}
+            </ol>
+          </Panel>
+        ))}
+      </div>
       <section id="timed-test">
         <h2>Timed test</h2>
-        {timedBands.map((band) => (
-          <section key={band.id}>
-            <h3>{band.time}</h3>
-            <p>{band.question}</p>
-            <ul>
-              {band.checks.map((check) => (
-                <li key={check}>{check}</li>
-              ))}
-            </ul>
-          </section>
-        ))}
+        <div className="panel-grid">
+          {timedBands.map((band) => (
+            <Panel key={band.id} title={band.time}>
+              <p>{band.question}</p>
+              <ul>
+                {band.checks.map((check) => (
+                  <li key={check}>{check}</li>
+                ))}
+              </ul>
+            </Panel>
+          ))}
+        </div>
       </section>
-      <section id="evidence-list">
-        <h2>Evidence to notice</h2>
+      <Panel as="section" id="evidence-list" title="Evidence to notice" heading="h2">
         <ul>
           {evidenceCategories.map((category) => (
             <li key={category.id}>
@@ -86,17 +55,15 @@ export function SelfAuditPage() {
             </li>
           ))}
         </ul>
-      </section>
-      <section id="questions">
-        <h2>Questions for another person</h2>
+      </Panel>
+      <Panel as="section" id="questions" title="Questions for another person" heading="h2">
         <ol className="prompt-list">
           {critiqueQuestions.map((question) => (
             <li key={question}>{question}</li>
           ))}
         </ol>
-      </section>
-      <section id="revision">
-        <h2>Revisions</h2>
+      </Panel>
+      <Panel as="section" id="revision" title="Revisions" heading="h2">
         <ul>
           {revisionLines.map((line) => (
             <li key={line.id}>
@@ -104,15 +71,14 @@ export function SelfAuditPage() {
             </li>
           ))}
         </ul>
-      </section>
-      <section id="summary">
-        <h2>Before you send the link</h2>
+      </Panel>
+      <Panel as="section" id="summary" title="Before you send the link" heading="h2">
         <ul>
           {publishItems.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
-      </section>
+      </Panel>
     </Page>
   );
 }

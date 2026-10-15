@@ -1,7 +1,7 @@
 import { Navigate, useLocation } from "react-router-dom";
 
 const targets: Record<string, string> = {
-  "/foundations": "/",
+  "/foundations": "/define",
   "/problems": "/curate",
   "/process": "/document",
   "/media": "/document",

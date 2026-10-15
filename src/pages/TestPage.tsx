@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChapterTask, Outcomes } from "../components/blocks";
+import { ChapterTask, Outcomes, Panel } from "../components/blocks";
 import { Page } from "../components/Page";
 import { critiqueQuestions, evidenceCategories, timedBands } from "../content/self-audit";
 
@@ -19,8 +19,9 @@ export function TestPage() {
 
   return (
     <Page
-      title="Test"
+      title="See what a reader can actually tell."
       lede="Open the portfolio. See what a stranger can actually tell, first by yourself and then with another person."
+      showLocation={false}
       sections={[
         { id: "timed", label: "Timed test" },
         { id: "evidence", label: "Evidence" },
@@ -39,15 +40,14 @@ export function TestPage() {
         <h2>10 seconds, 30 seconds, 3 minutes</h2>
         <p>Keep the site open beside you. Write what you notice. Do not pause to defend the work.</p>
         {timedBands.map((band) => (
-          <section key={band.id} id={band.id} className="card band">
-            <h3>{band.time}</h3>
+          <Panel key={band.id} id={band.id} title={band.time}>
             <p>{band.question}</p>
             <ul>
               {band.checks.map((check) => (
                 <li key={check}>{check}</li>
               ))}
             </ul>
-          </section>
+          </Panel>
         ))}
       </section>
       <section id="evidence">

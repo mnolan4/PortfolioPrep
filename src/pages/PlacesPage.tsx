@@ -1,4 +1,4 @@
-import { Outcomes } from "../components/blocks";
+import { Outcomes, Panel } from "../components/blocks";
 import { Page } from "../components/Page";
 import { placesPage } from "../content/places";
 
@@ -8,6 +8,7 @@ export function PlacesPage() {
       title={placesPage.title}
       lede={placesPage.lede}
       wide
+      showLocation={false}
       sections={[
         ...placesPage.destinations.map((destination) => ({
           id: destination.id,
@@ -17,32 +18,32 @@ export function PlacesPage() {
       ]}
     >
       <Outcomes items={placesPage.outcomes} />
-      <p>{placesPage.intro}</p>
+      <Panel title="Keep one body of evidence">
+        <p>{placesPage.intro}</p>
+      </Panel>
       <section>
         <h2>Common destinations</h2>
-        <div className="type-list">
+        <div className="panel-grid">
           {placesPage.destinations.map((destination) => (
-            <article key={destination.id} id={destination.id} className="card option-card">
-              <h3>{destination.title}</h3>
+            <Panel key={destination.id} id={destination.id} title={destination.title}>
               <p>{destination.examples}</p>
               <h4>What they need to verify</h4>
               <p>{destination.verify}</p>
               <h4>How to adapt the portfolio</h4>
               <p>{destination.adapt}</p>
-            </article>
+            </Panel>
           ))}
         </div>
       </section>
-      <section className="task" id="task">
+      <Panel as="section" id="task" tone="blue" title="In your own notes" heading="h2">
         <p className="kicker">Compare</p>
-        <h2>In your own notes</h2>
         <p>{placesPage.task}</p>
         <ul className="prompt-list">
           {placesPage.prompts.map((prompt) => (
             <li key={prompt}>{prompt}</li>
           ))}
         </ul>
-      </section>
+      </Panel>
     </Page>
   );
 }

@@ -65,7 +65,7 @@ export function Layout() {
         </Link>
         <div className="topbar-actions">
           <Link to="/audit" className="topbar-audit">
-            Self-Audit
+            Portfolio Audit
           </Link>
           <button
             ref={menuRef}
@@ -95,7 +95,8 @@ export function Layout() {
               {guidePages.map((item) => (
                 <li key={item.path}>
                   <NavLink to={item.path} end={item.path === "/"}>
-                    {item.label}
+                    <span className="nav-name">{item.label}</span>
+                    {item.purpose ? <span className="nav-purpose">{item.purpose}</span> : null}
                   </NavLink>
                 </li>
               ))}
@@ -104,7 +105,7 @@ export function Layout() {
         </div>
         <div className="audit-dock">
           <NavLink to="/audit">
-            Self-Audit
+            Portfolio Audit
             <span>Prompts for your own notes</span>
           </NavLink>
         </div>

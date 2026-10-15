@@ -1,5 +1,5 @@
 export const problems = {
-  lede: "Curate means choosing what a stranger should meet first, and what should get out of the way. The cards are what a portfolio looks like when that choice did not happen.",
+  lede: "Curate means choosing what a stranger should meet first, and what should get out of the way. The (blue) cards below are some good practices. The (green) cards below are what a portfolio may look like when that choice did not happen.",
   outcomes: [
     "Name what belongs at the front of the portfolio, and what should be demoted.",
     "Recognize eight common failures and the repair for each.",

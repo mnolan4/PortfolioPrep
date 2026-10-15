@@ -1,4 +1,4 @@
-import { ChapterTask, ExampleComparison, Outcomes, ProjectTypeGuide } from "../components/blocks";
+import { ChapterTask, ExampleComparison, Outcomes, Panel, ProjectTypeGuide } from "../components/blocks";
 import { Page } from "../components/Page";
 import { explainChapter } from "../content/explain";
 
@@ -9,6 +9,7 @@ export function ExplainPage() {
       title={explainChapter.title}
       lede={explainChapter.lede}
       wide
+      showLocation={false}
       sections={[
         { id: "structure", label: "Project page" },
         { id: "pairs", label: "Weak and better" },
@@ -21,15 +22,16 @@ export function ExplainPage() {
     >
       <Outcomes items={explainChapter.outcomes} />
       <section id="structure">
-        <h2>The same parts, every time</h2>
-        <dl className="structure-list">
-          {explainChapter.structure.map((item) => (
-            <div key={item.term}>
-              <dt>{item.term}</dt>
-              <dd>{item.text}</dd>
-            </div>
-          ))}
-        </dl>
+        <Panel title="The same parts, every time" heading="h2">
+          <dl className="structure-list">
+            {explainChapter.structure.map((item) => (
+              <div key={item.term}>
+                <dt>{item.term}</dt>
+                <dd>{item.text}</dd>
+              </div>
+            ))}
+          </dl>
+        </Panel>
       </section>
       <section id="pairs">
         <h2>Replace the vague sentence</h2>
